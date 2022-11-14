@@ -180,7 +180,7 @@ describe("factorial", function () {
     it("returns the correct answer for n in [1,8]", function () {
       const expected = [1, 1, 2, 6, 24, 120, 720, 5040, 40320];
       for (let n = 0; n <= 8; n++) {
-        expect(code.factorial(n)).to.equal(expected(n));
+        expect(code.factorial(n)).to.equal(expected[n]);
       }
     });
   });
@@ -202,12 +202,12 @@ describe("buildNArray", function () {
   });
   describe("returns the correct output", function () {
     it('returns "error" if the argument is not an integer', function () {
-      expect(buildNArray(3.6)).to.equal("error");
-      expect(buildNArray("200")).to.equal("error");
+      expect(code.buildNArray(3.6)).to.equal("error");
+      expect(code.buildNArray("200")).to.equal("error");
     });
     it("returns an empty array for nonpositive arguments", function () {
-      expect(buildNArray(0)).to.eql([]);
-      expect(buildNArray(-82)).to.eql([]);
+      expect(code.buildNArray(0)).to.eql([]);
+      expect(code.buildNArray(-82)).to.eql([]);
     });
 
     // Generate and test 3 random numbers in [1,10]
@@ -218,7 +218,7 @@ describe("buildNArray", function () {
       const expected = Array.from({ length: test }, (_, i) => i + 1);
 
       it(`returns ${expected} for ${test}`, function () {
-        expect(buildNArray(test)).to.eql(expected);
+        expect(code.buildNArray(test)).to.eql(expected);
       });
     }
   });
@@ -271,11 +271,11 @@ describe("findLongestString", function () {
     // Generate and test 3 random arrays
     for (let i = 0; i < 3; i++) {
       // Don't worry about this test generation for now :)
-      const test = generateRandomNumberArray(1, 9999).map((n) => String(n));
+      const test = generateRandomNumberArray(1, 10).map((n) => "=".repeat(n));
       const expected = test.reduce((a, b) => (b.length > a.length ? b : a));
 
       it(`returns ${expected} for ${test}`, function () {
-        expect(code.findLongestString(test)).to.equal(test);
+        expect(code.findLongestString(test)).to.equal(expected);
       });
     }
   });
@@ -303,7 +303,7 @@ describe("countPresent", function () {
       const expected = test.reduce((a, b) => (b ? a + 1 : a), 0);
 
       it(`returns ${expected} for ${test}`, function () {
-        expect(code.countPresent(test)).to.equal(test);
+        expect(code.countPresent(test)).to.equal(expected);
       });
     }
   });
@@ -416,7 +416,7 @@ describe("evenAndOdd", function () {
       expect(code.evenAndOdd).to.be.a("function");
     });
     it("returns an array of length 2", function () {
-      const result = code.evenAndOdd();
+      const result = code.evenAndOdd([1, 2, 3, 4, 5]);
       expect(result).to.be.an("array");
       expect(result).to.have.lengthOf(2);
     });
@@ -424,7 +424,7 @@ describe("evenAndOdd", function () {
   describe("returns the correct output", function () {
     // Generate and test 3 random arrays
     for (let i = 0; i < 3; i++) {
-      const test = generateRandomNumberArray();
+      const test = generateRandomNumberArray(1);
       // Don't worry about this next line for now :)
       const expected = [
         test.filter((n) => n % 2 === 0),
@@ -452,7 +452,7 @@ describe("exponentiate", function () {
     it('returns "error" if either argument is not an integer', function () {
       expect(code.exponentiate(5.3, 2)).to.equal("error");
       expect(code.exponentiate(5, 2.3)).to.equal("error");
-      expect(code.exponentiate(5, 2, 3.9)).to.equal("error");
+      expect(code.exponentiate(5, 3.9)).to.equal("error");
       expect(code.exponentiate("5", 2)).to.equal("error");
       expect(code.exponentiate(5, "2")).to.equal("error");
       expect(code.exponentiate("5", "2")).to.equal("error");
