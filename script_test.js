@@ -14,7 +14,7 @@ function generateRandomInteger(low = -50, high = 50) {
   return low + Math.floor(Math.random() * (high - low + 1));
 }
 function generateRandomNumberArray(low = -50, high = 50, n = 5) {
-  return Array({ length: n }, () => generateRandomInteger(low, high));
+  return Array.from({ length: n }, () => generateRandomInteger(low, high));
 }
 //#endregion Setup
 
@@ -247,7 +247,7 @@ describe("findMax", function () {
       const expected = test.reduce((a, b) => (b > a ? b : a));
 
       it(`returns ${expected} for ${test}`, function () {
-        expect(code.findMax(test)).to.equal(test);
+        expect(code.findMax(test)).to.equal(expected);
       });
     }
   });
@@ -427,8 +427,8 @@ describe("evenAndOdd", function () {
       const test = generateRandomNumberArray();
       // Don't worry about this next line for now :)
       const expected = [
-        foo.filter((n) => n % 2 === 0),
-        foo.filter((n) => n % 2 === 1),
+        test.filter((n) => n % 2 === 0),
+        test.filter((n) => n % 2 === 1),
       ];
 
       it(`returns ${expected} for ${test}`, function () {
