@@ -24,13 +24,13 @@ An example solution is provided in `script.js` for the first prompt of each stra
 
 A **guard** is a conditional usually placed at the beginning of a function that prevents the rest of the function from being run if certain conditions are not met. These are used often to help avoid errors. A function can have more than one guard.
 
-### multiplyNumber
+### multiplyNumbers
 
-`multiplyNumber(a: any, b: number)` returns the product of `a` and `b` _unless_ `a` is not a number, in which case the string `"error"` is returned.
+`multiplyNumbers(a: any, b: number)` returns the product of `a` and `b` _unless_ `a` is not a number, in which case the string `"error"` is returned.
 
 ```js
-multiplyNumber(3, 6); // >>> 18
-multiplyNumber("not a number", 6); // >>> "error"
+multiplyNumbers(3, 6); // >>> 18
+multiplyNumbers("not a number", 6); // >>> "error"
 ```
 
 ### vote
@@ -69,6 +69,8 @@ sumArray([10, 9, 28, 173, -23]); // >>> 197
 ### sumToN
 
 `sumToN(n: number)` returns the sum of all integers from 1 to `n`. If `n` is 0 or negative, then `0` is returned. You can assume that `n` is an integer.
+
+**Use a loop!**
 
 ```js
 sumToN(-2); // >>> 0
@@ -211,7 +213,7 @@ Use a combination of the techniques you've learned to solve the following practi
 
 ### exponentiate
 
-`exponentiate(b: number, p: number)` returns `b` raised to the `p`th power. Do not use the exponent operator (`**`).
+`exponentiate(b: integer, p: integer)` returns `b` raised to the `p`th power. Do not use the exponent operator (`**`).
 
 ```js
 exponentiate(2, 3); // >>> 8
@@ -236,9 +238,10 @@ bacteriaTime(10, 120); // >>> 80
 
 ### getAverage
 
-`getAverage(number[])` returns the average (mean) of all the numbers in the given array.
+`getAverage(number[])` returns the average (mean) of all the numbers in the given array. If the array is empty, then `null` should be returned.
 
 ```js
+getAverage([]); // >>> null
 getAverage([10, 23, 18, -5, 28, 10]); // >>> 14
 ```
 
@@ -252,11 +255,11 @@ getAverage([10, 23, 18, -5, 28, 10]); // >>> 14
 countCoins(["Q", "Q", "D", "N", "N", "P", "Q"]); // >>> 96
 ```
 
-### pairs
+### getPairs
 
-`pairs(number)` returns an array of all possible pairs of integers between 1 and the given number. If the given number is not a positive integer, then the string `"error"` is returned.
+`getPairs(number)` returns an array of all possible pairs of integers between 1 and the given number. If the given number is not a positive integer, then the string `"error"` is returned.
 
 ```js
-pairs("pair"); // >>> "error"
-pairs(4); // >>> [[ 1, 1 ], [ 1, 2 ],  [ 1, 3 ], [ 1, 4 ],  [ 2, 2 ], [ 2, 3 ],  [ 2, 4 ], [ 3, 3 ],  [ 3, 4 ], [ 4, 4 ]]
+getPairs("pair"); // >>> "error"
+getPairs(4); // >>> [[ 1, 1 ], [ 1, 2 ],  [ 1, 3 ], [ 1, 4 ],  [ 2, 2 ], [ 2, 3 ],  [ 2, 4 ], [ 3, 3 ],  [ 3, 4 ], [ 4, 4 ]]
 ```
