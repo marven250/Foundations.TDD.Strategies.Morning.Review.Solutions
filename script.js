@@ -2,6 +2,11 @@
 //#region Guard
 // --------------------------
 
+/**
+ * @param {number} a
+ * @param {number} b 
+ * @returns the product of the two given numbers
+ */
 function multiplyNumbers(a, b) {
   if (typeof a !== "number" || typeof b !== "number") {
     return "error";
@@ -16,6 +21,10 @@ function multiplyNumbers(a, b) {
 //#region Accumulator Variable
 // --------------------------
 
+/**
+ * @param {int[]} nums 
+ * @returns the sum of the given array of numbers
+ */
 function sumArray(nums) {
   let total = 0;
   for (const number of nums) {
@@ -30,6 +39,10 @@ function sumArray(nums) {
 //#region Conditional Accumulation
 // --------------------------
 
+/**
+ * @param {int[]} nums 
+ * @returns the greatest number in the given array
+ */
 function findMax(nums) {
   let max = -Infinity;
   for (const number of nums) {
@@ -46,6 +59,11 @@ function findMax(nums) {
 //#region Return Timing
 // --------------------------
 
+/**
+ * @param {string} song 
+ * @param {string[]} playlist 
+ * @returns whether the given song can be found in the playlist
+ */
 function isSongInPlaylist(song, playlist) {
   for (const s of playlist) {
     if (s === song) {
@@ -61,6 +79,11 @@ function isSongInPlaylist(song, playlist) {
 //#region Nested Loops and Arrays
 // --------------------------
 
+/**
+ * @param {number} cols 
+ * @param {number} rows 
+ * @returns a 2D array of the given dimensions filled with "-"
+ */
 function makeBoard(cols, rows) {
   const board = [];
   for (let r = 0; r < rows; r++) {
