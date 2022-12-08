@@ -130,5 +130,5 @@ module.exports = {
   // bacteriaTime,
   // getAverage,
   // countCoins,
-  // pairs,
+  // getPairs,
 };
