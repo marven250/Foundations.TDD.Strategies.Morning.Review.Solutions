@@ -169,15 +169,12 @@ describe("factorial", function () {
     });
   });
   describe("returns the correct output", function () {
-    it('returns "error" if the argument is not an integer', function () {
+    it('returns "error" if the argument is negative or not an integer', function () {
       expect(code.factorial(1.3)).to.equal("error");
       expect(code.factorial("10")).to.equal("error");
-    });
-    it("returns 1 for nonpositive arguments", function () {
-      expect(code.factorial(0)).to.equal(1);
       expect(code.factorial(-20)).to.equal(1);
     });
-    it("returns the correct answer for n in [1,8]", function () {
+    it("returns the correct answer for n in [0,8]", function () {
       const expected = [1, 1, 2, 6, 24, 120, 720, 5040, 40320];
       for (let n = 0; n <= 8; n++) {
         expect(code.factorial(n)).to.equal(expected[n]);

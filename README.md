@@ -80,10 +80,10 @@ sumToN(23); // >>> 276
 
 ### factorial
 
-`factorial(n: number)` returns the product of all integers from 1 to `n`. If `n` is 0 or negative, then `1` is returned. If `n` is not an integer, then the string `"error"` is returned.
+`factorial(n: number)` returns the product of all integers from 1 to `n`. If `n` is 0, then `1` is returned. If `n` is negative or not an integer, then the string `"error"` is returned.
 
 ```js
-factorial(-1919): // >>> 1
+factorial(-1919): // >>> "error"
 factorial("10"); // >>> "error"
 factorial(8); // >>> 40320
 ```
