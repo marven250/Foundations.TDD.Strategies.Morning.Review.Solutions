@@ -26,7 +26,7 @@ A **guard** is a conditional usually placed at the beginning of a function that 
 
 ### multiplyNumbers
 
-`multiplyNumbers(a: any, b: number)` returns the product of `a` and `b` _unless_ `a` is not a number, in which case the string `"error"` is returned.
+`multiplyNumbers(a: any, b: any)` returns the product of `a` and `b` _unless_ either of the parameters is not a number, in which case the string `"error"` is returned.
 
 ```js
 multiplyNumbers(3, 6); // >>> 18

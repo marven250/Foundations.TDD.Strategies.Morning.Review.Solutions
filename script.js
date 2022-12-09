@@ -5,7 +5,9 @@
 /**
  * @param {number} a
  * @param {number} b 
- * @returns the product of the two given numbers
+ * @returns the product of `a` and `b` 
+ * _unless_ either of the parameters is not a number,
+ * in which case the string `"error"` is returned.
  */
 function multiplyNumbers(a, b) {
   if (typeof a !== "number" || typeof b !== "number") {
